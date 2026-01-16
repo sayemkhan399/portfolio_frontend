@@ -21,7 +21,7 @@ const BlogPost = () => {
 
         // Fetch the JSON data
         const response = await fetch(
-          "https://portfolio-server-six-omega.vercel.app//blogs"
+          "https://portfolio-server-sigma-azure.vercel.app//blogs"
         ); // Adjust path as needed
         if (!response.ok) throw new Error("Failed to fetch blog data");
 

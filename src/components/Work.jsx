@@ -39,7 +39,7 @@ const Work = ({ showAll = false }) => {
   const [filter, setFilter] = useState("all");
 
   useEffect(() => {
-    fetch("https://portfolio-server-six-omega.vercel.app/projects")
+    fetch("https://portfolio-server-sigma-azure.vercel.app/projects")
       .then((res) => res.json())
       .then((data) => setProjects(data))
       .catch((err) => console.error(err));

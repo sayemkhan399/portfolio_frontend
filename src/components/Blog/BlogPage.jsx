@@ -10,7 +10,7 @@ const BlogPage = () => {
   const [blogs, setBlogs] = useState([]);
 
   useEffect(() => {
-    fetch("https://portfolio-server-six-omega.vercel.app/blogs")
+    fetch("https://portfolio-server-sigma-azure.vercel.app/blogs")
       .then((response) => response.json())
       .then((data) => setBlogs(data))
       .catch((error) => console.error("Error fetching blog data:", error));
