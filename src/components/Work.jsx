@@ -39,7 +39,7 @@ const Work = ({ showAll = false }) => {
   const [filter, setFilter] = useState("all");
 
   useEffect(() => {
-    fetch("https://portfolio-server-sigma-azure.vercel.app/projects")
+    fetch("http://localhost:5001/projects")
       .then((res) => res.json())
       .then((data) => setProjects(data))
       .catch((err) => console.error(err));
@@ -126,7 +126,7 @@ const Work = ({ showAll = false }) => {
               {/* Header */}
               <div className="bg-linear-to-r from-emerald-500 to-teal-600 p-5 h-40 flex flex-col items-center justify-center">
                 <div className="w-12 h-12 bg-white/20 rounded-lg flex items-center justify-center text-white">
-                  {project.icon}
+                  <img src={project.icon} alt={project.title} />
                 </div>
                 <h3 className="mt-3 text-lg font-semibold text-white text-center">
                   {project.title}
@@ -135,7 +135,7 @@ const Work = ({ showAll = false }) => {
 
               {/* Body */}
               <div className="p-5">
-                <p className="text-gray-300 text-sm mb-4 min-h-20">
+                <p className="text-gray-300 text-sm mb-4 min-h-20 josefin">
                   {project.description}
                 </p>
 

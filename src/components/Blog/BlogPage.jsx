@@ -10,7 +10,7 @@ const BlogPage = () => {
   const [blogs, setBlogs] = useState([]);
 
   useEffect(() => {
-    fetch("https://portfolio-server-sigma-azure.vercel.app/blogs")
+    fetch("http://localhost:5001/blogs")
       .then((response) => response.json())
       .then((data) => setBlogs(data))
       .catch((error) => console.error("Error fetching blog data:", error));
@@ -31,8 +31,8 @@ const BlogPage = () => {
       blog.subtitle.toLowerCase().includes(searchTerm.toLowerCase()) ||
       (blog.short_description &&
         blog.short_description.some((desc) =>
-          desc.toLowerCase().includes(searchTerm.toLowerCase())
-        ))
+          desc.toLowerCase().includes(searchTerm.toLowerCase()),
+        )),
   );
 
   const latestBlog = filteredBlogs[0];

@@ -2,7 +2,7 @@ import React from "react";
 import { motion } from "framer-motion";
 import { ArrowRight } from "lucide-react";
 import { DiReact, DiHtml5 } from "react-icons/di";
-import { SiTailwindcss } from "react-icons/si";
+import { SiTailwindcss,SiMongodb } from "react-icons/si";
 import { useLanguage } from "../contexts/LanguageContext";
 import MernStack from "./MernStack";
 
@@ -89,35 +89,44 @@ const Hero = () => {
       </motion.div>
 
       {/* Floating Icons */}
-      <motion.div
-        animate={floatY(0)}
-        className="absolute top-1/4 left-8 sm:left-16 text-4xl text-sky-400"
-      >
-        <DiReact />
-      </motion.div>
-
-      <motion.div
-        animate={floatY(0.4)}
-        className="absolute top-1/3 right-12 sm:right-24 text-4xl text-orange-400"
-      >
-        <DiHtml5 />
-      </motion.div>
-
-      <motion.div
-        animate={floatY(0.8)}
-        className="absolute bottom-24 left-10 sm:left-28 text-4xl text-teal-400"
-      >
-        <SiTailwindcss />
-      </motion.div>
-
-      <motion.div
-        animate={floatY(1.2)}
-        className="absolute bottom-16 right-12 text-green-400 opacity-40"
-      >
-        <ArrowRight className="w-8 h-8 rotate-45" />
-      </motion.div>
+      <FloatingIcon
+        icon={<DiReact className="text-sky-400 drop-shadow-[0_0_12px_rgba(56,189,248,0.5)]" />}
+        position="top-1/4 left-6 sm:left-12"
+        delay={0}
+      />
+      <FloatingIcon
+        icon={<DiHtml5 className="text-orange-400 drop-shadow-[0_0_12px_rgba(251,146,60,0.5)]" />}
+        position="top-1/3 right-8 sm:right-20"
+        delay={0.6}
+      />
+      <FloatingIcon
+        icon={<SiTailwindcss className="text-teal-400 drop-shadow-[0_0_12px_rgba(45,212,191,0.5)]" />}
+        position="bottom-32 left-8 sm:left-24"
+        delay={1.2}
+      />
+      <FloatingIcon
+        icon={<SiMongodb className="text-green-400 drop-shadow-[0_0_12px_rgba(72,187,120,0.5)]" />}
+        position="bottom-40 right-10"
+        delay={1.8}
+      />
     </section>
   );
 };
+const FloatingIcon = ({ icon, position, delay }) => (
+  <motion.div
+    animate={{
+      y: ["0%", "-20%", "0%"],
+    }}
+    transition={{
+      duration: 8 + Math.random() * 4,
+      repeat: Infinity,
+      ease: "easeInOut",
+      delay,
+    }}
+    className={`absolute ${position} text-3xl sm:text-4xl pointer-events-none`}
+  >
+    {icon}
+  </motion.div>
+);
 
 export default Hero;

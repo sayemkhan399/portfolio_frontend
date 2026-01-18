@@ -31,7 +31,7 @@ const Account = () => {
     { name: "LinkedIn", icon: Linkedin, color: "#0a66c2", url: "https://www.linkedin.com/in/md-sayem-khan-ab0a09286/" },
     { name: "Facebook", icon: Facebook, color: "#1877f2", url: "https://www.facebook.com/md.sayem.khan.7982780/" },
     { name: "Instagram", icon: Instagram, color: "#e1306c", url: "https://www.instagram.com/md_sayem_khan1/" },
-    { name: "Email", icon: Mail, color: "#22c55e", url: "mailto:sayem399k@gmail.com" }
+    { name: "Email", icon: Mail, color: "#EA4335", url: "mailto:sayem399k@gmail.com" }
   ];
 
   return (

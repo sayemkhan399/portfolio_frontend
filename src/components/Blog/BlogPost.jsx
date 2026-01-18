@@ -20,9 +20,7 @@ const BlogPost = () => {
         setError(null);
 
         // Fetch the JSON data
-        const response = await fetch(
-          "https://portfolio-server-sigma-azure.vercel.app//blogs"
-        ); // Adjust path as needed
+        const response = await fetch(`http://localhost:5001/blogs/${id}`); // Adjust path as needed
         if (!response.ok) throw new Error("Failed to fetch blog data");
 
         const blogsData = await response.json();

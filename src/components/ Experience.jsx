@@ -23,7 +23,7 @@ const Experience = () => {
 
   const [roles, setRoles] = useState([]);
   useEffect(() => {
-    fetch("https://portfolio-server-sigma-azure.vercel.app/experience")
+    fetch("http://localhost:5001/experience")
       .then((res) => res.json())
       .then((data) => setRoles(data))
       .catch((err) => console.error(err));
