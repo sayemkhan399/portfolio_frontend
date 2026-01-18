@@ -23,7 +23,7 @@ const Experience = () => {
 
   const [roles, setRoles] = useState([]);
   useEffect(() => {
-    fetch("http://localhost:5001/experience")
+    fetch("https://ftpserver2.vercel.app/experience")
       .then((res) => res.json())
       .then((data) => setRoles(data))
       .catch((err) => console.error(err));

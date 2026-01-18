@@ -53,7 +53,7 @@ const Header = () => {
             </Link>
             {/* Glassy Bubble Indicator */}
             {activeLink === item.id && (
-              <div className="absolute inset-0 bg-blue-500/20  backdrop-blur-md rounded-full -z-10 animate-fade-in" />
+              <div className="absolute inset-0 bg-blue-500/20  backdrop-blur-md rounded-lg  -z-10 animate-fade-in" />
             )}
           </li>
         ))}

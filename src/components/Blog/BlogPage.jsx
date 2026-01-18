@@ -10,7 +10,7 @@ const BlogPage = () => {
   const [blogs, setBlogs] = useState([]);
 
   useEffect(() => {
-    fetch("http://localhost:5001/blogs")
+    fetch("https://ftpserver2.vercel.app/blogs")
       .then((response) => response.json())
       .then((data) => setBlogs(data))
       .catch((error) => console.error("Error fetching blog data:", error));

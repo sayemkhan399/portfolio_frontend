@@ -39,7 +39,7 @@ const Work = ({ showAll = false }) => {
   const [filter, setFilter] = useState("all");
 
   useEffect(() => {
-    fetch("http://localhost:5001/projects")
+    fetch("https://ftpserver2.vercel.app/projects")
       .then((res) => res.json())
       .then((data) => setProjects(data))
       .catch((err) => console.error(err));
